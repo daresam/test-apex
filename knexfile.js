@@ -3,15 +3,22 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
+const DATABASE_CLIENT = process.env.DATABASE_CLIENT
+const MYSQL_HOST= process.env.MYSQL_HOST
+const MYSQL_DATABASE_NAME= process.env.MYSQL_DATABASE_NAME
+const MYSQL_USER= process.env.MYSQL_USER
+const MYSQL_PASSWORD= process.env.MYSQL_PASSWORD
+
 module.exports = {
 
   development: {
-    client: 'mysql2',
+    client: DATABASE_CLIENT,
     connection: {
-      host: '127.0.0.1',
-      database: 'apexhaux',
-      user:     'root',
-      password: 'password'
+      host: MYSQL_HOST,
+      database: MYSQL_DATABASE_NAME,
+      user:     MYSQL_USER,
+      password: MYSQL_PASSWORD
     },
     pool: {
       min: 2,
@@ -28,11 +35,12 @@ module.exports = {
   },
 
   production: {
-    client: 'mysql2',
+    client: DATABASE_CLIENT,
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host: MYSQL_HOST,
+      database: MYSQL_DATABASE_NAME,
+      user:     MYSQL_USER,
+      password: MYSQL_PASSWORD
     },
     pool: {
       min: 2,

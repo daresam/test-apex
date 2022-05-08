@@ -3,14 +3,16 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const port = process.env.Port || 4000
+// Loads environment variables from a .env file into process.env
+require('dotenv').config()
+
+const port = process.env.PORT
 
 app.use(cors())
 app.use(bodyParser.json())
 
 // User Routes
-
-// app.use('v1/api', require('./api/users').router)
+app.use('/api/v1', require('./api/users'))
 
 // Property Routes
 
