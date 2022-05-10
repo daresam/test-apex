@@ -10,15 +10,16 @@ const MYSQL_DATABASE_NAME= process.env.MYSQL_DATABASE_NAME
 const MYSQL_USER= process.env.MYSQL_USER
 const MYSQL_PASSWORD= process.env.MYSQL_PASSWORD
 
+
 module.exports = {
 
   development: {
-    client: DATABASE_CLIENT,
+    client: 'mysql2',
     connection: {
-      host: MYSQL_HOST,
-      database: MYSQL_DATABASE_NAME,
-      user:     MYSQL_USER,
-      password: MYSQL_PASSWORD
+      host: '127.0.0.1',
+      database: 'apexhaux',
+      user:     'root',
+      password: 'password'
     },
     pool: {
       min: 2,

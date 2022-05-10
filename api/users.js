@@ -29,7 +29,7 @@ router.post('/auth/signup', async (req, res) => {
 
     // Create user in our database
     const user = await User.query().insert({
-        first_name,
+        first_name: first_name,
         last_name,
         email,
         password: encryptedPassword,
@@ -108,6 +108,15 @@ router.post('/auth/signin', async (req, res) => {
     } catch (error) {
         console.log(error)
     }
+})
+
+router.get('/users', async (req, res) => {
+    const users = await User.query()
+
+    return res.json({
+        status: 'success',
+        data: users
+    })
 })
 
 module.exports = router

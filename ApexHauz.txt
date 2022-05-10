@@ -120,7 +120,7 @@ Property
 
     "address": String,
 
-    "type": String, // 2 bedrooms, etc
+    "type": String, // 2 bedrooms, mini flat, 3 bedrooms etc
 
     "image_url": String,
 
