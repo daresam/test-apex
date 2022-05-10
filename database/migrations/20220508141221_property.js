@@ -14,6 +14,7 @@ exports.up = function(knex) {
       table.string('type').notNullable()
       table.string('image_url')
       table.datetime('created_on')
+      table.timestamps(false, true);
 
 
   })

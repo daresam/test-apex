@@ -10,7 +10,6 @@ const MYSQL_DATABASE_NAME= process.env.MYSQL_DATABASE_NAME
 const MYSQL_USER= process.env.MYSQL_USER
 const MYSQL_PASSWORD= process.env.MYSQL_PASSWORD
 
-
 module.exports = {
 
   development: {
